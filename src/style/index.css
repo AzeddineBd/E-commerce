@@ -1,1 +1,39 @@
 @import "tailwindcss";
+
+:root {
+  /* Primary Brand Color */
+  --primary-color: #56b280; /* أخضر ناعم (للأزرار والعناصر البارزة) */
+  --primary-hover-color: #46976a; /* أخضر أغمق قليلاً للتحويم */
+
+  /* Text Colors */
+  --text-color: #1d252c; /* النص الرئيسي */
+  --text-muted-color: #5e6e89; /* نص خافت */
+  --heading-color: #183b56; /* العناوين والترويسات */
+
+  /* Backgrounds */
+  --background-color: #ffffff; /* خلفية رئيسية */
+  --background-light-section: #f7f8fa; /* خلفية فاتحة للبطاقات */
+  --testimonial-background: rgba(86, 178, 128, 0.1); /* خلفية شهادات العملاء */
+
+  /* Button Colors */
+  --button-text-color: #ffffff; /* لون النص في الأزرار */
+  --button-background-color: var(--primary-color); /* خلفية الأزرار */
+  --button-hover-background-color: var(
+    --primary-hover-color
+  ); /* خلفية الأزرار عند التحويم */
+  --button-border-color: var(--primary-color); /* حدود الأزرار */
+  --button-hover-border-color: var(
+    --primary-hover-color
+  ); /* حدود الأزرار عند التحويم */
+  --button-background-muted-color: #d6d6d6; /* خلفية الأزرار الخافتة */
+  --button-text-muted-color: #272727; /* لون النص في الأزرار الخافتة */
+
+  /* Border & Shadow */
+  --border-color: #e0e0e0; /* حدود فاتحة */
+  --card-shadow: rgba(0, 0, 0, 0.05); /* ظل خفيف للبطاقات */
+
+  /* Status Colors */
+  --success-color: #27ae60; /* لون للنجاح */
+  --error-color: #eb5757; /* لون للخطأ */
+  --info-color: #2d9cdb; /* لون للمعلومات */
+}
