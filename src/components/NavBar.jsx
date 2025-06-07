@@ -20,7 +20,9 @@ const NavBar = () => {
       {/* Desktop Navbar */}
       <div className="hidden container mx-auto md:flex justify-around items-center">
         <div>
-          <img src={logo} alt="Store logo" className="w-32" />
+          <a href="/">
+            <img src={logo} alt="Store logo" className="w-32 cursor-pointer" />
+          </a>
         </div>
         <ul className="flex space-x-20">
           <li>
@@ -51,13 +53,18 @@ const NavBar = () => {
       <div className="container mx-auto md:hidden flex justify-between items-center">
         {/* Hamburger Menu Icon */}
         {!isOpen ? (
-          <RxHamburgerMenu className="text-3xl" onClick={toggleMenu} />
+          <RxHamburgerMenu
+            className="text-3xl cursor-pointer"
+            onClick={toggleMenu}
+          />
         ) : (
-          <IoMdClose className="text-3xl" onClick={toggleMenu} />
+          <IoMdClose className="text-3xl cursor-pointer" onClick={toggleMenu} />
         )}
 
         <div>
-          <img src={logo} alt="Store logo" className="w-32" />
+          <a href="/">
+            <img src={logo} alt="Store logo" className="w-32 cursor-pointer" />
+          </a>
         </div>
         <div className="relative cursor-pointer">
           <span className="absolute top-[-8px] right-[-4px] text-[var(--background-color)] bg-[var(--primary-color)] rounded-full w-4 h-4 flex items-center justify-center text-xs font-semibold z-20">
