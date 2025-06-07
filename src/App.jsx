@@ -1,22 +1,9 @@
-import React from "react";
-import Button from "./components/Button";
 import NavBar from "./components/NavBar";
 
 function App() {
   return (
     <>
       <NavBar />
-      <div className="p-4 flex gap-4">
-        <Button size="large" variant="primary">
-          Large Primary Button
-        </Button>
-        <Button size="medium" variant="secondary">
-          Medium
-        </Button>
-        <Button size="large" variant="mute">
-          Medium Mute Button
-        </Button>
-      </div>
     </>
   );
 }

@@ -1,5 +1,4 @@
 import logo from "../assets/nav_img/logo.png";
-// import cart from "../assets/nav_img/Cart.png";
 import cart2 from "../assets/nav_img/cart.svg";
 
 const NavBar = () => {

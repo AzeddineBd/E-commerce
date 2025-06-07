@@ -38,6 +38,10 @@
   --info-color: #2d9cdb; /* لون للمعلومات */
 }
 
+body {
+  font-family: "Poppins", sans-serif;
+}
+
 /* navbar link classes */
 .navbar-link {
   @apply text-[var(--text-color)] text-lg font-semibold hover:text-gray-400;
