@@ -2,7 +2,7 @@ import productImg from "../assets/products_img/image-1.png";
 
 const ProductCard = () => {
   return (
-    <div className="flex flex-col items-center bg-[var(--background-light-section)] shadow-lg md:w-64">
+    <div className="flex flex-col items-center bg-[var(--background-light-section)] shadow-lg w-full md:max-w-xs">
       <div className="hover:scale-105 transition-transform duration-300">
         <img src={productImg} alt="#" className="bg-cover" />
       </div>
