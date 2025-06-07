@@ -16,7 +16,7 @@ const NavBar = () => {
   };
 
   return (
-    <nav className="bg-[var(--background-color)] p-4">
+    <nav className="fixed mx-auto w-full bg-[var(--background-color)] p-4">
       {/* Desktop Navbar */}
       <div className="hidden container mx-auto md:flex justify-around items-center">
         <div>
