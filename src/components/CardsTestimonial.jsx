@@ -6,7 +6,11 @@ const CardsTestimonial = () => {
     <div className="bg-[var(--background-color)] w-64 md:w-80 p-4 flex flex-col items-center text-center rounded-lg shadow-lg">
       {/* Image */}
       <div className="mb-4">
-        <img src={person1Img} alt="person" className="w-20 h-20 rounded-full" />
+        <img
+          src={person1Img}
+          alt="person"
+          className="md:w-20 md:h-20 w-14 h-14 rounded-full"
+        />
       </div>
 
       {/* Star */}
