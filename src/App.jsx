@@ -3,6 +3,7 @@ import Hero from "./layout/Hero";
 import Products from "./layout/Products";
 import About from "./layout/About";
 import Testimonial from "./layout/Testimonial";
+import Popular from "./layout/Popular";
 
 function App() {
   return (
@@ -12,6 +13,7 @@ function App() {
       <Products />
       <About />
       <Testimonial />
+      <Popular />
     </>
   );
 }
