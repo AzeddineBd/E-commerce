@@ -14,6 +14,7 @@
   --background-color: #ffffff; /* خلفية رئيسية */
   --background-light-section: #f7f8fa; /* خلفية فاتحة للبطاقات */
   --testimonial-background: rgba(86, 178, 128, 0.1); /* خلفية شهادات العملاء */
+  --footer-color: #1d252c;
 
   /* Button Colors */
   --button-text-color: #ffffff; /* لون النص في الأزرار */

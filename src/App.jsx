@@ -4,6 +4,7 @@ import Products from "./layout/Products";
 import About from "./layout/About";
 import Testimonial from "./layout/Testimonial";
 import Popular from "./layout/Popular";
+import Footer from "./components/Footer";
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
       <About />
       <Testimonial />
       <Popular />
+      <Footer />
     </>
   );
 }
