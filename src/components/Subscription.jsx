@@ -1,6 +1,6 @@
 const Subscription = () => {
   return (
-    <div>
+    <div className="w-full">
       <div className="flex items-center gap-4 p-4">
         <input type="radio" name="purchaseType" defaultChecked />
         <label>One time purchase</label>
