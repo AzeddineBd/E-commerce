@@ -1,9 +1,9 @@
-import ViewCart from "./pages/ViewCart";
+import Shipping from "./pages/Shipping";
 
 function App() {
   return (
     <>
-      <ViewCart />
+      <Shipping />
     </>
   );
 }

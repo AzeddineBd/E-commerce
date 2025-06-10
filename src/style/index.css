@@ -13,6 +13,7 @@
   /* Backgrounds */
   --background-color: #ffffff; /* خلفية رئيسية */
   --background-light-section: #f7f8fa; /* خلفية فاتحة للبطاقات */
+  --background-gris: #f2f2f2;
   --testimonial-background: rgba(86, 178, 128, 0.1); /* خلفية شهادات العملاء */
   --footer-color: #1d252c;
 
@@ -27,7 +28,7 @@
     --primary-hover-color
   ); /* حدود الأزرار عند التحويم */
   --button-background-muted-color: #d6d6d6; /* خلفية الأزرار الخافتة */
-  --button-text-muted-color: #272727; /* لون النص في الأزرار الخافتة */
+  --button-text-muted-color: #ffffff; /* لون النص في الأزرار الخافتة */
 
   /* Border & Shadow */
   --border-color: #e0e0e0; /* حدود فاتحة */
