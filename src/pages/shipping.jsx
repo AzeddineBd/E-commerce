@@ -77,6 +77,14 @@ const Shipping = () => {
             <p className="font-semibold text[14px]">Free</p>
           </div>
         </div>
+
+        {/* Button & Back link */}
+        <div className="flex items-center justify-between">
+          <a href="/" className="text-[var(--primary-color)] underline">
+            Back to cart
+          </a>
+          <Button size="large">Go to payment</Button>
+        </div>
       </div>
 
       {/* Right Side */}
