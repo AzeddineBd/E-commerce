@@ -1,9 +1,9 @@
-import Payment from "./pages/Payment";
+import Thanks from "./pages/Thanks";
 
 function App() {
   return (
     <>
-      <Payment />
+      <Thanks />
     </>
   );
 }
