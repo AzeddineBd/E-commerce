@@ -1,9 +1,9 @@
-import Shipping from "./pages/Shipping";
+import Payment from "./pages/Payment";
 
 function App() {
   return (
     <>
-      <Shipping />
+      <Payment />
     </>
   );
 }
