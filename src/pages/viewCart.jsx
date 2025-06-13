@@ -1,8 +1,6 @@
 import NavBar from "../components/NavBar";
 import Button from "../components/Button";
 import Footer from "../components/Footer";
-// image
-import Productimg from "../assets/product.jpg";
 
 const ViewCart = () => {
   return (
@@ -52,7 +50,7 @@ const ViewCart = () => {
                 <tr className="border-b border-[var(--border-color)]">
                   <td>
                     <img
-                      src={Productimg}
+                      src="../public/assets/product.jpg"
                       alt="Product Image"
                       className="max-w-40 px-4 py-2"
                     />
@@ -130,7 +128,7 @@ const ViewCart = () => {
                 <tr className="border-b border-[var(--border-color)]">
                   <td>
                     <img
-                      src={Productimg}
+                      src="../public/assets/product.jpg"
                       alt="Product Image"
                       className="max-w-32 px-4 py-4"
                     />

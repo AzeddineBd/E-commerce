@@ -1,13 +1,10 @@
-import person1Img from "../assets/testimonials_img/person1.jpg";
-import star from "../assets/Star1.png";
-
 const CardsTestimonial = () => {
   return (
     <div className="bg-[var(--background-color)] w-64 md:w-80 p-4 flex flex-col items-center text-center rounded-lg shadow-lg">
       {/* Image */}
       <div className="mb-4">
         <img
-          src={person1Img}
+          src="../public/assets/testimonials_img/person1.jpg"
           alt="person"
           className="md:w-20 md:h-20 w-14 h-14 rounded-full"
         />
@@ -15,7 +12,7 @@ const CardsTestimonial = () => {
 
       {/* Star */}
       <div className="mb-8">
-        <img src={star} alt="star" />
+        <img src="../public/assets/Star1.png" alt="star" />
       </div>
 
       {/* Comment */}

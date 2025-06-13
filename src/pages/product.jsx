@@ -2,8 +2,6 @@
 import Subscription from "../components/Subscription";
 import Quantity from "../components/Quantity";
 import Button from "../components/Button";
-// Image
-import productImg from "../assets/product.jpg";
 
 const Product = () => {
   return (
@@ -20,7 +18,7 @@ const Product = () => {
 
         <div className="flex flex-col justify-center text-center w-full max-w-md mx-auto object-contain">
           <img
-            src={productImg}
+            src="../public/assets/product.jpg"
             alt="Product"
             className="rounded-lg shadow-lg mb-6"
           />

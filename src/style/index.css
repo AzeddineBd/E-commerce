@@ -1,5 +1,9 @@
 @import "tailwindcss";
 
+html {
+  scroll-behavior: smooth;
+}
+
 :root {
   /* Primary Brand Color */
   --primary-color: #56b280; /* أخضر ناعم (للأزرار والعناصر البارزة) */

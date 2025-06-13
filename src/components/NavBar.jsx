@@ -1,6 +1,3 @@
-// import Images
-import logo from "../assets/nav_img/logo.png";
-import cart2 from "../assets/nav_img/cart.svg";
 // import React Icons
 import { RxHamburgerMenu } from "react-icons/rx";
 import { IoMdClose } from "react-icons/io";
@@ -21,17 +18,21 @@ const NavBar = () => {
       <div className="hidden container mx-auto md:flex justify-around items-center">
         <div>
           <a href="/">
-            <img src={logo} alt="Store logo" className="w-32 cursor-pointer" />
+            <img
+              src="../public/assets/nav_img/logo.png"
+              alt="Store logo"
+              className="w-32 cursor-pointer"
+            />
           </a>
         </div>
         <ul className="flex space-x-20">
           <li>
-            <a href="/" className="navbar-link">
+            <a href="#products" className="navbar-link">
               Discovery
             </a>
           </li>
           <li>
-            <a href="/about" className="navbar-link">
+            <a href="#about" className="navbar-link">
               About
             </a>
           </li>
@@ -45,7 +46,11 @@ const NavBar = () => {
           <span className="absolute top-[-8px] right-[-4px] text-[var(--background-color)] bg-[var(--primary-color)] rounded-full w-4 h-4 flex items-center justify-center text-xs font-semibold z-20">
             1
           </span>
-          <img src={cart2} alt="Cart Icon" className="w-7 relative " />
+          <img
+            src="../public/assets/nav_img/cart.svg"
+            alt="Cart Icon"
+            className="w-7 relative "
+          />
         </div>
       </div>
 
@@ -63,14 +68,22 @@ const NavBar = () => {
 
         <div>
           <a href="/">
-            <img src={logo} alt="Store logo" className="w-32 cursor-pointer" />
+            <img
+              src="../public/assets/nav_img/logo.png"
+              alt="Store logo"
+              className="w-32 cursor-pointer"
+            />
           </a>
         </div>
         <div className="relative cursor-pointer">
           <span className="absolute top-[-8px] right-[-4px] text-[var(--background-color)] bg-[var(--primary-color)] rounded-full w-4 h-4 flex items-center justify-center text-xs font-semibold z-20">
             1
           </span>
-          <img src={cart2} alt="Cart Icon" className="w-7 relative " />
+          <img
+            src="../public/assets/nav_img/cart.svg"
+            alt="Cart Icon"
+            className="w-7 relative "
+          />
         </div>
 
         {/* Mobile Menu */}
@@ -81,12 +94,12 @@ const NavBar = () => {
         >
           <ul className="flex flex-col space-y-2 px-5 py-4 text-lg">
             <li>
-              <a href="/" className="navbar-link">
+              <a href="#products" className="navbar-link">
                 Discovery
               </a>
             </li>
             <li>
-              <a href="/about" className="navbar-link">
+              <a href="#about" className="navbar-link">
                 About
               </a>
             </li>

@@ -1,8 +1,4 @@
 import React from "react";
-// image
-import logo from "../assets/nav_img/logo.png";
-import productImg from "../assets/product.jpg";
-import CreditCard from "../assets/CreditCardFill.png";
 // icons
 import { MdKeyboardArrowRight } from "react-icons/md";
 // Components
@@ -22,7 +18,7 @@ const Payment = () => {
       <div className="p-4 md:p-8 lg:p-12 xl:p-20 max-w-3xl">
         {/* Logo */}
         <div className="mb-10">
-          <img src={logo} alt="Logo Candleaf" />
+          <img src="../public/assets/nav_img/logo.png" alt="Logo Candleaf" />
         </div>
 
         {/* Steps */}
@@ -93,7 +89,10 @@ const Payment = () => {
               className="w-full text-[var(--primary-color)] p-4 flex items-center gap-2 font-semibold"
               style={{ backgroundColor: "rgba(86, 178, 128, 0.4)" }}
             >
-              <img src={CreditCard} alt="Credit Card image" />
+              <img
+                src="../public/assets/CreditCardFill.png"
+                alt="Credit Card image"
+              />
               Credit Card
             </h2>
             <div className="p-4 grid grid-cols-2 gap-4">
@@ -183,7 +182,11 @@ const Payment = () => {
       <div className="bg-[var(--background-gris)] p-4 md:p-8 lg:p-12 xl:p-20">
         {/* Product img & name */}
         <div className="flex gap-10 border-b-2 border-[var(--border-color)] pb-8 max-w-lg">
-          <img src={productImg} alt="Product" className="w-40" />
+          <img
+            src="../public/assets/product.jpg"
+            alt="Product"
+            className="w-40"
+          />
           <div className="flex flex-col gap-4">
             <h3 className="font-medium">Spiced Mint Candleaf®</h3>
             <p className="text-[var(--primary-color)] font-semibold">$9.99</p>

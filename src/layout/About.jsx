@@ -1,9 +1,9 @@
-import aboutImg from "../assets/about_img/image.png";
-import checkmark from "../assets/checkmark-circle-outline 1.png";
-
 const About = () => {
   return (
-    <section className="bg-[var(--background-light-section)] py-12 md:py-0 md:h-[600px] flex items-center justify-center">
+    <section
+      id="about"
+      className="bg-[var(--background-light-section)] py-12 md:py-0 md:h-[600px] flex items-center justify-center"
+    >
       <div className="container mx-auto flex justify-center items-center h-full px-4 md:px-0">
         <div className="grid grid-cols-1 md:flex md:flex-row items-center gap-8">
           {/* This is the About Content */}
@@ -19,7 +19,7 @@ const About = () => {
             {/* Image - Mobile Only (shown between title and list) */}
             <div className="md:hidden mb-6 flex justify-center">
               <img
-                src={aboutImg}
+                src="../public/assets/about_img/image.png"
                 alt="About Us"
                 className="max-w-xs shadow-lg rounded-md"
               />
@@ -29,7 +29,7 @@ const About = () => {
             <div className="space-y-6">
               <div className="flex items-center gap-4">
                 <img
-                  src={checkmark}
+                  src="../public/assets/checkmark-circle-outline 1.png"
                   alt="/"
                   className="w-6 h-6 md:w-3 md:h-3"
                 />
@@ -40,7 +40,7 @@ const About = () => {
               </div>
               <div className="flex items-center gap-4">
                 <img
-                  src={checkmark}
+                  src="../public/assets/checkmark-circle-outline 1.png"
                   alt="/"
                   className="w-6 h-6 md:w-3 md:h-3"
                 />
@@ -51,7 +51,7 @@ const About = () => {
               </div>
               <div className="flex items-center gap-4">
                 <img
-                  src={checkmark}
+                  src="../public/assets/checkmark-circle-outline 1.png"
                   alt="/"
                   className="w-6 h-6 md:w-3 md:h-3"
                 />
@@ -62,7 +62,7 @@ const About = () => {
               </div>
               <div className="flex items-center gap-4">
                 <img
-                  src={checkmark}
+                  src="../public/assets/checkmark-circle-outline 1.png"
                   alt="/"
                   className="w-6 h-6 md:w-3 md:h-3"
                 />
@@ -77,7 +77,7 @@ const About = () => {
           {/* Image - Desktop Only (shown on the side) */}
           <div className="hidden md:block">
             <img
-              src={aboutImg}
+              src="../public/assets/about_img/image.png"
               alt="About Us"
               className="shadow-lg rounded-md"
             />

@@ -1,5 +1,3 @@
-import logoFooter from "../assets/logoFooter.png";
-
 const Footer = () => {
   return (
     <footer className="bg-[var(--footer-color)] text-[var(--background-color)]">
@@ -13,7 +11,7 @@ const Footer = () => {
             <div className="mb-2">
               <a href="#">
                 <img
-                  src={logoFooter}
+                  src="../public/assets/logoFooter.png"
                   alt="logo"
                   className="w-[140px] md:w-56"
                 />

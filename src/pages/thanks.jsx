@@ -1,8 +1,4 @@
 import React from "react";
-// image
-import logo from "../assets/nav_img/logo.png";
-import productImg from "../assets/product.jpg";
-import CheckCircle from "../assets/CheckCircle.png";
 // icons
 import { MdKeyboardArrowRight } from "react-icons/md";
 // Components
@@ -22,7 +18,7 @@ const Thanks = () => {
       <div className="p-4 md:p-8 lg:p-12 xl:p-20 max-w-3xl">
         {/* Logo */}
         <div className="mb-10">
-          <img src={logo} alt="Logo Candleaf" />
+          <img src="../public/assets/nav_img/logo.png" alt="Logo Candleaf" />
         </div>
 
         {/* Steps */}
@@ -41,7 +37,7 @@ const Thanks = () => {
 
         <div className="mb-8 flex flex-col justify-center items-center gap-2">
           <div className="flex flex-col justify-center items-center gap-2">
-            <img src={CheckCircle} alt="Check Circle" />
+            <img src="../public/assets/CheckCircle.png" alt="Check Circle" />
             <h2 className="font-medium text-2xl">Payment Confirmed</h2>
             <p className="text-[var(--primary-color)] text-[14px]">
               ORDER #2039
@@ -70,7 +66,11 @@ const Thanks = () => {
       <div className="bg-[var(--background-gris)] p-4 md:p-8 lg:p-12 xl:p-20">
         {/* Product img & name */}
         <div className="flex gap-10 border-b-2 border-[var(--border-color)] pb-8 max-w-lg">
-          <img src={productImg} alt="Product" className="w-40" />
+          <img
+            src="../public/assets/product.jpg"
+            alt="Product"
+            className="w-40"
+          />
           <div className="flex flex-col gap-4">
             <h3 className="font-medium">Spiced Mint Candleaf®</h3>
             <p className="text-[var(--primary-color)] font-semibold">$9.99</p>

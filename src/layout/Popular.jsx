@@ -1,4 +1,5 @@
 import ProductCart from "../components/ProductCard";
+import productsData from "../data/productsData";
 
 const Popular = () => {
   return (
@@ -11,10 +12,13 @@ const Popular = () => {
           </p>
         </div>
         <div className="grid md:grid-cols-4 grid-cols-1 gap-4 sm:gap-6 md:gap-8 justify-items-center items-center mx-4 md:mx-0">
-          <ProductCart />
-          <ProductCart />
-          <ProductCart />
-          <ProductCart />
+          {productsData.map((product) => (
+            <ProductCart
+              name={product.name}
+              price={product.price}
+              image={product.image}
+            />
+          ))}
         </div>
       </div>
     </section>
