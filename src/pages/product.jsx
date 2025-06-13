@@ -8,6 +8,7 @@ import productsData from "../data/productsData";
 import { useParams } from "react-router-dom";
 
 const Product = () => {
+  // To get the product
   const { id } = useParams();
   const product = productsData.find((p) => String(p.id) === id);
 
