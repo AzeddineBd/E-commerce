@@ -21,11 +21,20 @@ const ProductCard = ({ id, name, price, image }) => {
         />
       </div>
 
-      <div className="bg-[var(--background-color)] p-4 mt-4 w-full">
-        <h2 className="text-lg font-medium text-left">{name}</h2>
-        <p className="text-lg text-[var(--primary-color)] text-right  font-medium mt-2">
-          {price}
-        </p>
+      <div className="bg-[var(--background-color)] p-4 mt-4 w-full flex items-center justify-between">
+        <div>
+          <h2 className="text-lg font-medium">{name}</h2>
+          <p className="text-lg text-[var(--primary-color)] font-medium mt-2">
+            {price}
+          </p>
+        </div>
+        <a
+          href="#"
+          className="flex items-center justify-center hover:scale-105"
+        >
+          +
+          <img src="../public/assets/nav_img/Cart.png" alt="cart icon" />
+        </a>
       </div>
     </div>
   );
