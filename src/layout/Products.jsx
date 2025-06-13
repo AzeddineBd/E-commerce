@@ -18,6 +18,7 @@ const Products = () => {
         {productsData.map((product) => (
           <ProductCart
             key={product.id}
+            id={product.id}
             name={product.name}
             price={product.price}
             image={product.image}

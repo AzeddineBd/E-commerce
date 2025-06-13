@@ -1,10 +1,22 @@
-const ProductCard = ({ name, price, image }) => {
+import { useNavigate } from "react-router-dom";
+import Products from "../layout/Products";
+
+const ProductCard = ({ id, name, price, image }) => {
+  const navigate = useNavigate();
+
+  const handleClick = () => {
+    navigate(`/product/${id}`);
+  };
+
   return (
-    <div className="flex flex-col items-center bg-[var(--background-light-section)] shadow-lg w-full md:max-w-xs cursor-pointer">
+    <div
+      onClick={handleClick}
+      className="flex flex-col items-center bg-[var(--background-light-section)] shadow-lg w-full md:max-w-xs cursor-pointer"
+    >
       <div className="hover:scale-105 transition-transform duration-300">
         <img
           src={`../public/assets/products_img/${image}`}
-          alt="#"
+          alt={name}
           className="bg-cover"
         />
       </div>

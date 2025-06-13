@@ -2,8 +2,24 @@
 import Subscription from "../components/Subscription";
 import Quantity from "../components/Quantity";
 import Button from "../components/Button";
+// import data
+import productsData from "../data/productsData";
+// import hooks
+import { useParams } from "react-router-dom";
 
 const Product = () => {
+  const { id } = useParams();
+  const product = productsData.find((p) => String(p.id) === id);
+
+  // Check if product is existing
+  if (!product) {
+    return (
+      <div>
+        <h1>Product not existing</h1>
+      </div>
+    );
+  }
+
   return (
     <div className="container mx-auto px-4 pt-32 mb-8">
       {/* Container */}
@@ -11,22 +27,19 @@ const Product = () => {
         {/* Title for Mobile */}
 
         <h1 className="md:hidden font-medium text-2xl text-[var(--text-color)] mb">
-          Spiced Mint Candleaf®
+          {product.name}
         </h1>
 
         {/* Image & Shipping */}
 
         <div className="flex flex-col justify-center text-center w-full max-w-md mx-auto object-contain">
           <img
-            src="../public/assets/product.jpg"
+            src={`../public/assets/products_img/${product.image}`}
             alt="Product"
             className="rounded-lg shadow-lg mb-6"
           />
           <div className="hidden md:block">
-            <p className="font-medium text-2xl mb-4">
-              All hand-made with natural soy wax, Candleaf is made for your
-              pleasure moments.
-            </p>
+            <p className="font-medium text-2xl mb-4">{product.description}</p>
             <p className="text-[var(--primary-color)] text-xl font-bold">
               🚚 FREE SHIPPING
             </p>
@@ -36,7 +49,7 @@ const Product = () => {
         {/* Details of product */}
         <div>
           <h1 className="hidden md:block font-medium text-2xl text-[var(--text-color)] mb-4">
-            Spiced Mint Candleaf®
+            {product.name}
           </h1>
           {/* Info */}
           <div className="grid grid-cols-1 lg:grid-cols-5 md:grid-cols-4 gap-4">
@@ -44,7 +57,7 @@ const Product = () => {
             <div className="md:col-span-2">
               <div className="md:gap-6 flex items-center justify-around md:flex-col md:items-start">
                 <p className="font-semibold text-[var(--primary-color)] text-2xl md:text-2xl">
-                  $ 9.99
+                  {product.price}
                 </p>
                 <div>
                   <Quantity />

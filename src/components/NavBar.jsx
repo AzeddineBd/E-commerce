@@ -115,3 +115,5 @@ const NavBar = () => {
   );
 };
 export default NavBar;
+
+// Fix Descovery rout and about
