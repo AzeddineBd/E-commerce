@@ -1,14 +1,11 @@
-import { useState } from "react";
-
-const Quantity = () => {
-  const [count, setCount] = useState(0);
-
-  const increment = () => setCount(count + 1);
+const Quantity = ({ value, onChange }) => {
+  const increment = () => onChange(value + 1);
   const decrement = () => {
-    if (count > 0) {
-      setCount(count - 1);
+    if (value > 1) {
+      onChange(value - 1);
     }
   };
+
   return (
     <div>
       <div>
@@ -17,7 +14,7 @@ const Quantity = () => {
           <button onClick={decrement} className="px-2 cursor-pointer">
             -
           </button>
-          <span className="px-2">{count}</span>
+          <span className="px-2">{value}</span>
           <button onClick={increment} className="px-2 cursor-pointer">
             +
           </button>

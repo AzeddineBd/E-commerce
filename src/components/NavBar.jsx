@@ -3,10 +3,12 @@ import { RxHamburgerMenu } from "react-icons/rx";
 import { IoMdClose } from "react-icons/io";
 // React hooks
 import { useState } from "react";
+import { useCart } from "../context/useCart";
 
 const NavBar = () => {
   // Toggle btn
   const [isOpen, setIsOpen] = useState(false);
+  const { cartItems } = useCart();
   // Function to toggle the menu
   const toggleMenu = () => {
     setIsOpen(!isOpen);
@@ -43,9 +45,12 @@ const NavBar = () => {
           </li>
         </ul>
         <div className="relative cursor-pointer">
-          <span className="absolute top-[-8px] right-[-4px] text-[var(--background-color)] bg-[var(--primary-color)] rounded-full w-4 h-4 flex items-center justify-center text-xs font-semibold z-20">
-            1
-          </span>
+          {cartItems.length > 0 && (
+            <span className="absolute top-[-8px] right-[-4px] text-[var(--background-color)] bg-[var(--primary-color)] rounded-full w-4 h-4 flex items-center justify-center text-xs font-semibold z-20">
+              {cartItems.length}
+            </span>
+          )}
+
           <img
             src="../public/assets/nav_img/cart.svg"
             alt="Cart Icon"

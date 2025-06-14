@@ -1,8 +1,15 @@
 import { useNavigate } from "react-router-dom";
-import Products from "../layout/Products";
+import { useCart } from "../context/useCart";
 
 const ProductCard = ({ id, name, price, image }) => {
   const navigate = useNavigate();
+  const { addToCart } = useCart();
+
+  const handleAddToCart = (e) => {
+    e.stopPropagation(); // Important: To prevent handleClick execution
+    const product = { id, name, price, image };
+    addToCart(product, 1);
+  };
 
   const handleClick = () => {
     navigate(`/product/${id}`);
@@ -28,13 +35,14 @@ const ProductCard = ({ id, name, price, image }) => {
             {price}
           </p>
         </div>
-        <a
-          href="#"
-          className="flex items-center justify-center hover:scale-105"
+
+        <button
+          onClick={handleAddToCart}
+          className="flex items-center justify-center cursor-pointer hover:scale-105"
         >
           +
           <img src="../public/assets/nav_img/Cart.png" alt="cart icon" />
-        </a>
+        </button>
       </div>
     </div>
   );
