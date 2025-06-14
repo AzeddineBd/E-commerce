@@ -1,8 +1,29 @@
 import NavBar from "../components/NavBar";
 import Button from "../components/Button";
 import Footer from "../components/Footer";
+import Quantity from "../components/Quantity";
+import { useCart } from "../context/useCart";
+import { Link } from "react-router-dom";
 
 const ViewCart = () => {
+  const { cartItems, setCartItems } = useCart();
+  const updateQuantity = (id, newQty) => {
+    const updatedCart = cartItems.map((item) =>
+      item.id === id ? { ...item, quantity: newQty } : item
+    );
+    setCartItems(updatedCart);
+  };
+
+  const subTotal = cartItems.reduce(
+    (total, item) => total + item.price * item.quantity,
+    0
+  );
+
+  const deletProduct = (id) => {
+    const updatedCart = cartItems.filter((item) => item.id !== id);
+    setCartItems(updatedCart);
+  };
+
   return (
     <div className="min-h-screen flex flex-col">
       <NavBar />
@@ -13,7 +34,7 @@ const ViewCart = () => {
               Your cart items
             </h1>
             <a href="/" className="text-[var(--primary-color)] underline">
-              Back to shipping
+              Back to home
             </a>
           </div>
 
@@ -47,36 +68,43 @@ const ViewCart = () => {
               {/* Body */}
 
               <tbody>
-                <tr className="border-b border-[var(--border-color)]">
-                  <td>
-                    <img
-                      src="../public/assets/product.jpg"
-                      alt="Product Image"
-                      className="max-w-40 px-4 py-2"
-                    />
-                  </td>
-                  <td
-                    scope="row"
-                    className="px-3 py-2 font-medium whitespace-nowrap text-start"
+                {cartItems.map((item, index) => (
+                  <tr
+                    key={index}
+                    className="border-b border-[var(--border-color)]"
                   >
-                    <span className="block">Spiced Mint Candleaf®</span>
-                    <a
-                      href="/"
-                      className="text-[var(--primary-color)] underline"
+                    <td>
+                      <img
+                        src={`../public/assets/products_img/${item.image}`}
+                        alt="Product Image"
+                        className="max-w-40 px-4 py-2"
+                      />
+                    </td>
+                    <td
+                      scope="row"
+                      className="px-3 py-2 font-medium whitespace-nowrap text-start"
                     >
-                      Remove
-                    </a>
-                  </td>
-                  <td className="px-3 py-2">$9.99</td>
-                  <td className="px-3 py-2">
-                    <div className="flex justify-between p-1 w-20 border border-[var(--primary-color)]">
-                      <button className="px-2 cursor-pointer">-</button>
-                      <span className="px-2">1</span>
-                      <button className="px-2 cursor-pointer">+</button>
-                    </div>
-                  </td>
-                  <td className="px-3 py-2">$9.99</td>
-                </tr>
+                      <span className="block">{item.name}</span>
+                      <button
+                        onClick={() => deletProduct(item.id)}
+                        className="text-[var(--primary-color)] underline cursor-pointer"
+                      >
+                        Remove
+                      </button>
+                    </td>
+                    <td className="px-3 py-2">{item.price}</td>
+                    <td className="px-3 py-2">
+                      <Quantity
+                        value={item.quantity}
+                        onChange={(newQty) => updateQuantity(item.id, newQty)}
+                      />
+                    </td>
+                    {/* fix total */}
+                    <td className="px-3 py-2">
+                      ${(item.price * item.quantity).toFixed(2)}
+                    </td>
+                  </tr>
+                ))}
 
                 {/* Line 3 */}
 
@@ -89,9 +117,13 @@ const ViewCart = () => {
                   <td className="px-3 py-2 font-semibold whitespace-nowrap">
                     Sub-total
                   </td>
-                  <td className="px-3 py-2 font-semibold">$9.99</td>
+                  <td className="px-3 py-2 font-semibold">
+                    ${subTotal.toFixed(2)}
+                  </td>
                   <td className="px-3 py-2">
-                    <Button>Check-out</Button>
+                    <Link to="/auth">
+                      <Button>Check-out</Button>
+                    </Link>
                   </td>
                 </tr>
               </tbody>
@@ -125,40 +157,46 @@ const ViewCart = () => {
               {/* Table Body */}
 
               <tbody>
-                <tr className="border-b border-[var(--border-color)]">
-                  <td>
-                    <img
-                      src="../public/assets/product.jpg"
-                      alt="Product Image"
-                      className="max-w-32 px-4 py-4"
-                    />
-                  </td>
-                  <td
-                    scope="row"
-                    className="px-3 py-4 font-medium text-sm text-start"
+                {cartItems.map((item, index) => (
+                  <tr
+                    key={index}
+                    className="border-b border-[var(--border-color)]"
                   >
-                    <span className="block ">Spiced Mint Candleaf®</span>
-                    <a
-                      href="/"
-                      className="text-[var(--primary-color)] underline"
+                    <td>
+                      <img
+                        src={`../public/assets/products_img/${item.image}`}
+                        alt="Product Image"
+                        className="max-w-32 px-4 py-4"
+                      />
+                    </td>
+                    <td
+                      scope="row"
+                      className="px-3 py-4 font-medium text-sm text-start"
                     >
-                      Remove
-                    </a>
-                  </td>
-                  <td className="px-3 py-4">
-                    <p>$9.99</p>
+                      <span className="block ">{item.name}</span>
+                      <button
+                        onClick={() => deletProduct(item.id)}
+                        className="text-[var(--primary-color)] underline"
+                      >
+                        Remove
+                      </button>
+                    </td>
+                    <td className="px-3 py-4">
+                      <p>${(item.price * item.quantity).toFixed(2)}</p>
 
-                    <div className="flex justify-between p-1 w-20 border border-[var(--primary-color)]">
-                      <button className="px-2 cursor-pointer">-</button>
-                      <span className="px-2">1</span>
-                      <button className="px-2 cursor-pointer">+</button>
-                    </div>
-                  </td>
-                </tr>
+                      <Quantity
+                        value={item.quantity}
+                        onChange={(newQty) => updateQuantity(item.id, newQty)}
+                      />
+                    </td>
+                  </tr>
+                ))}
                 <tr className="text-center w-full ">
                   <td className="px-3 py-4 font-semibold text-md">Sub-total</td>
                   <td></td>
-                  <td className="px-3 py-4 font-semibold text-md">$9.99</td>
+                  <td className="px-3 py-4 font-semibold text-md">
+                    ${subTotal.toFixed(2)}
+                  </td>
                 </tr>
               </tbody>
             </table>
@@ -166,7 +204,9 @@ const ViewCart = () => {
               Tax and shipping cost will be calculated later
             </p>
             <div className="text-center py-4">
-              <Button size="large">Check-out</Button>
+              <Link to="/auth">
+                <Button size="large">Check-out</Button>
+              </Link>
             </div>
           </div>
         </div>

@@ -4,8 +4,21 @@ import { IoMdClose } from "react-icons/io";
 // React hooks
 import { useState } from "react";
 import { useCart } from "../context/useCart";
+import { useNavigate } from "react-router-dom";
+// React Route
+import { Link } from "react-router-dom";
 
 const NavBar = () => {
+  const navigate = useNavigate();
+
+  const handelClick = () => {
+    if (cartItems.length > 0) {
+      navigate("/view-cart");
+    } else {
+      alert("Empty Cart");
+    }
+  };
+
   // Toggle btn
   const [isOpen, setIsOpen] = useState(false);
   const { cartItems } = useCart();
@@ -44,19 +57,23 @@ const NavBar = () => {
             </a>
           </li>
         </ul>
-        <div className="relative cursor-pointer">
-          {cartItems.length > 0 && (
-            <span className="absolute top-[-8px] right-[-4px] text-[var(--background-color)] bg-[var(--primary-color)] rounded-full w-4 h-4 flex items-center justify-center text-xs font-semibold z-20">
-              {cartItems.length}
-            </span>
-          )}
 
-          <img
-            src="../public/assets/nav_img/cart.svg"
-            alt="Cart Icon"
-            className="w-7 relative "
-          />
-        </div>
+        {/* Cart icon */}
+        <button onClick={handelClick}>
+          <div className="relative cursor-pointer">
+            {cartItems.length > 0 && (
+              <span className="absolute top-[-8px] right-[-4px] text-[var(--background-color)] bg-[var(--primary-color)] rounded-full w-4 h-4 flex items-center justify-center text-xs font-semibold z-20">
+                {cartItems.length}
+              </span>
+            )}
+
+            <img
+              src="../public/assets/nav_img/cart.svg"
+              alt="Cart Icon"
+              className="w-7 relative "
+            />
+          </div>
+        </button>
       </div>
 
       {/* Mobile Navbar */}
@@ -80,16 +97,21 @@ const NavBar = () => {
             />
           </a>
         </div>
-        <div className="relative cursor-pointer">
-          <span className="absolute top-[-8px] right-[-4px] text-[var(--background-color)] bg-[var(--primary-color)] rounded-full w-4 h-4 flex items-center justify-center text-xs font-semibold z-20">
-            1
-          </span>
-          <img
-            src="../public/assets/nav_img/cart.svg"
-            alt="Cart Icon"
-            className="w-7 relative "
-          />
-        </div>
+        <button onClick={handelClick}>
+          <div className="relative cursor-pointer">
+            {cartItems.length > 0 && (
+              <span className="absolute top-[-8px] right-[-4px] text-[var(--background-color)] bg-[var(--primary-color)] rounded-full w-4 h-4 flex items-center justify-center text-xs font-semibold z-20">
+                {cartItems.length}
+              </span>
+            )}
+
+            <img
+              src="../public/assets/nav_img/cart.svg"
+              alt="Cart Icon"
+              className="w-7 relative "
+            />
+          </div>
+        </button>
 
         {/* Mobile Menu */}
         <div

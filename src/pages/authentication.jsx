@@ -3,6 +3,7 @@ import React from "react";
 import { MdKeyboardArrowRight } from "react-icons/md";
 // Components
 import Button from "../components/Button";
+import { Link, useNavigate } from "react-router-dom";
 
 const steps = [
   { name: "Cart" },
@@ -12,6 +13,7 @@ const steps = [
 ];
 
 const Authentication = () => {
+  const navigate = useNavigate();
   return (
     <section className="grid grid-cols-1 md:grid-cols-2 h-screen">
       {/* Left Side */}
@@ -107,10 +109,7 @@ const Authentication = () => {
             />
             <div className="col-span-full">
               <input type="checkbox" id="add_me" className=" mr-2" />
-              <label
-                htmlFor="add_me"
-                className="text-[var(--button-text-muted-color)] text-[14px]"
-              >
+              <label htmlFor="add_me" className="text-[14px]">
                 Save this informations for a future fast checkout
               </label>
             </div>
@@ -119,9 +118,13 @@ const Authentication = () => {
 
         {/* Button & Back link */}
         <div className="flex items-center justify-between">
-          <a href="/" className="text-[var(--primary-color)] underline">
+          <button
+            onClick={() => navigate(-1)}
+            className="text-[var(--primary-color)] underline cursor-pointer"
+          >
             Back to cart
-          </a>
+          </button>
+
           <Button size="large">Go to shipping</Button>
         </div>
       </div>
