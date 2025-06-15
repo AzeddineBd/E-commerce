@@ -18,11 +18,6 @@ const Product = () => {
   // ✅ 2.Product identification
   const product = productsData.find((p) => String(p.id) === id);
 
-  // ✅ 3. Using useEffect to monitor basket changes
-  useEffect(() => {
-    console.log("🛒 محتوى السلة:", cartItems);
-  }, [cartItems]);
-
   // ✅ 4. Add product to cart function
   const handleAddToCart = () => {
     addToCart(product, quantity);

@@ -37,7 +37,11 @@ const Authentication = () => {
             )}
           </div>
           <div>
-            <input type="checkbox" id="add_me" className="mr-2" />
+            <input
+              type="checkbox"
+              id="add_me"
+              className="mr-2 accent-[var(--primary-color)]"
+            />
             <label htmlFor="add_me" className="text-[14px]">
               Add me to Candleaf newsletter for a 10% discount
             </label>
@@ -145,7 +149,11 @@ const Authentication = () => {
               )}
             </div>
             <div className="col-span-full">
-              <input type="checkbox" id="add_me" className=" mr-2" />
+              <input
+                type="checkbox"
+                id="add_me"
+                className="mr-2 accent-[var(--primary-color)]"
+              />
               <label htmlFor="add_me" className="text-[14px]">
                 Save this informations for a future fast checkout
               </label>
