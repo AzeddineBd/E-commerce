@@ -10,7 +10,7 @@ const steps = [
   { label: "Thanks", path: "thanks" },
 ];
 
-const CheckoutLayout = ({ currentStep, children }) => {
+const CheckoutLayout = ({ currentStep, children, onNext }) => {
   const navigate = useNavigate();
 
   const stepIndex = steps.findIndex((step) => step.path === currentStep);
@@ -23,7 +23,6 @@ const CheckoutLayout = ({ currentStep, children }) => {
   };
 
   const goBack = () => navigate(-1);
-
   return (
     <section className="grid grid-cols-1 md:grid-cols-2 h-screen">
       {/* Left */}
@@ -62,7 +61,7 @@ const CheckoutLayout = ({ currentStep, children }) => {
             >
               Go Back
             </a>
-            <a onClick={goToNextStep}>
+            <a onClick={onNext}>
               <Button>Next</Button>
             </a>
           </div>
