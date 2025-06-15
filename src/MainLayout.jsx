@@ -8,12 +8,12 @@ function MainLayout() {
   const hideFooterRoutes = ["/view-cart"]; // Bloked Pages
 
   return (
-    <CartProvider>
+    <>
       <NavBar />
       <Outlet />
       {/* This logic for View cart page, for hide footer */}
       {!hideFooterRoutes.includes(location.pathname) && <Footer />}
-    </CartProvider>
+    </>
   );
 }
 

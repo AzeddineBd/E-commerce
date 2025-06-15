@@ -3,9 +3,9 @@ import { CartProvider } from "./context/CartContext";
 
 function EmptyLayout() {
   return (
-    <CartProvider>
+    <>
       <Outlet />
-    </CartProvider>
+    </>
   );
 }
 
